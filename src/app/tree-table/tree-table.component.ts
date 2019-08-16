@@ -11,11 +11,8 @@ export class TreeTableComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-
     Object.keys(this.dataset).forEach(function getItem(key, index) {
-
       const matches = key.match(/fk_([a-zA-Z]{1,50})/);
-
       console.log('match: ', matches[1]);
     });
   }
@@ -36,7 +33,6 @@ export class TreeTableComponent implements OnInit {
   getNumColumns(key) {
     console.log('key: ', key);
     let matches = key.match(/fk_[a-zA-Z]{1,50}_([0-9]{1,3})/);
-    console.log('matches: ', matches)
     if (matches.length > 1) {
       return parseInt(matches[1]);
     } else {
